@@ -2,10 +2,10 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html/wordpress
+    destination: /var/www/html
     overwrite: yes
 permissions:
-  - object: /var/www/html/wordpress/codedeploy
+  - object: /var/www/html/codedeploy
     pattern: "*.sh"
     owner: root
     mode: 775
