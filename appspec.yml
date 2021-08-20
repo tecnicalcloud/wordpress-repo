@@ -11,11 +11,11 @@ permissions:
     mode: 775
     type:
       - file
-  hooks:
-    beforeinstall:
+    hooks:
+      beforeinstall:
       - location: codedeploy/before_install.sh
         runas: root
-      # timeout: 300
+        timeout: 300
   # AfterInstall:
     # - location: codedeploy/after_install.sh
       # runas: root
