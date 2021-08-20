@@ -8,11 +8,18 @@ sudo chmod +x ./install
 sudo ./install auto
 sudo yum install -y python-pip
 sudo pip install awscli
-sudo su
-mkdir -p /var/www/html
-sudo mount -t efs -o tls fs-d174c891:/ efs
-sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-d174c891.efs.ap-southeast-1.amazonaws.com:/ /var/www/html
 yum update -y
-yum install -y httpd24 php73 mysql57 php73-mysqlnd php73-opcache
-sudo service httpd start
-chkconfig httpd on
+yum install -y httpd 
+sudo sudo yum install -y amazon-linux-extras
+sudo yum install -y amazon-linux-extras
+sudo  amazon-linux-extras | grep php
+sudo amazon-linux-extras enable php7.4 -y
+sudo yum clean metadata -y
+sudo yum install php php-{pear,cgi,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,json,xml,fpm,intl,zip,imap}
+sudo service enable httpd
+sudo service start httpd
+sudo yum install git -y 
+
+
+
+
