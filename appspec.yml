@@ -14,8 +14,8 @@ permissions:
     hooks:
       beforeinstall:
       - location: codedeploy/before_install.sh
-        runas: root
-        timeout: 300
+        # runas: root
+        # timeout: 300
   # AfterInstall:
     # - location: codedeploy/after_install.sh
       # runas: root
